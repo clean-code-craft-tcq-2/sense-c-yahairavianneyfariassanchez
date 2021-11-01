@@ -2,8 +2,6 @@
 #include "Alerter.h"
 #include <math.h>
 
-
-
 //Reports average, minimum and maximum
 struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
@@ -49,14 +47,12 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
 
 
 //Raises alerts when max is greater than threshold
-void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stats computedStats) {
-
-
+void check_and_alert(float maxThreshold, alerters[], struct Stats computedStats) {
     
     if(computedStats.max > maxThreshold)
     {
-        alerters[0];
-        alerters[1];
+        alerters[0]();
+        alerters[1]();
 
     } else {
 
