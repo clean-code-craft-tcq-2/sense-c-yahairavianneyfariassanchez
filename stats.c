@@ -11,11 +11,9 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     float maximum = numberset[0]; //we save the first value of the struct for compairisong
     float minimum = numberset[0]; //we save the first value of the array for compairisong
 
-    
-
     //All fields of computedStats (average, max, min) must be 
     //NaN for empty array
-    if(numberset == 0 && setlength == 0)
+    if(setlength == 0)
     {
         s.average = NAN;
         s.max = NAN;
