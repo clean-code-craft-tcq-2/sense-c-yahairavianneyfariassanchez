@@ -7,9 +7,6 @@
 //Reports average, minimum and maximum
 struct Stats compute_statistics(const float* numberset, int setlength) {
     struct Stats s;
-    s.average = 0;
-    s.min = 0;
-    s.max = 0; 
     float sumarray = 0; //Sum of struct
     float maximum = numberset[0]; //we save the first value of the struct for compairisong
     float minimum = numberset[0]; //we save the first value of the array for compairisong
@@ -36,6 +33,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
         s.average = NAN;
         s.max = NAN;
         s.min = NAN;
+        
     } else {
         s.average = sumarray / setlength;
         s.max = maximum;
