@@ -15,7 +15,7 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
 
     //All fields of computedStats (average, max, min) must be 
     //NaN for empty array
-    if(numberset == NULL && setlength == 0)
+    if(numberset == 0 && setlength == 0)
     {
         s.average = NAN;
         s.max = NAN;
