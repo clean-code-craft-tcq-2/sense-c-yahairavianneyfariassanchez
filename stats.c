@@ -2,8 +2,7 @@
 #include "Alerter.h"
 #include <math.h>
 
-int emailAlertCallCount = 0;
-int ledAlertCallCount = 0;
+
 
 //Reports average, minimum and maximum
 struct Stats compute_statistics(const float* numberset, int setlength) {
@@ -54,24 +53,8 @@ void check_and_alert(float maxThreshold, alerter_funcptr alerters[], struct Stat
     
     if(computedStats.max > maxThreshold)
     {
-
-        if(alerters[0]){
-
-            emailAlertCallCount = 1;
-
-        }else{
-
-            emailAlertCallCount = 2;
-        }
-
-         if(alerters[1]){
-
-            ledAlertCallCount = 1;
-
-        }else{
-            
-            ledAlertCallCount = 2;
-        }
+        alerters[0];
+        alerters[1];
 
     } else {
 
