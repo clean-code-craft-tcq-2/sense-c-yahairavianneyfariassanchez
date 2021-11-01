@@ -11,30 +11,36 @@ struct Stats compute_statistics(const float* numberset, int setlength) {
     float maximum = numberset[0]; //we save the first value of the struct for compairisong
     float minimum = numberset[0]; //we save the first value of the array for compairisong
 
-    for(int i=0; i < setlength ; i++)
-    {
-        sumarray = sumarray + numberset[i];
-
-        if(numberset[i] > maximum) //Calculate the maximum value
-        {
-            maximum = numberset[i];
-        }
-
-        if(numberset[i] < minimum ) //Calculate the maximum value
-        {
-            minimum = numberset[i];
-        }
-    }
+    
 
     //All fields of computedStats (average, max, min) must be 
     //NaN for empty array
-    if(sumarray == 0 && setlength == 0)
+    if(numberset == NULL && setlength == 0)
     {
         s.average = NAN;
         s.max = NAN;
         s.min = NAN;
-        
+
     } else {
+
+        s.average = 0;
+        s.max = 0;
+        s.min = 0;
+
+        for(int i=0; i < setlength ; i++)
+        {
+            sumarray = sumarray + numberset[i];
+
+            if(numberset[i] > maximum) //Calculate the maximum value
+            {
+                maximum = numberset[i];
+            }
+
+            if(numberset[i] < minimum ) //Calculate the maximum value
+            {
+                minimum = numberset[i];
+            }
+        }
         s.average = sumarray / setlength;
         s.max = maximum;
         s.min = minimum;
