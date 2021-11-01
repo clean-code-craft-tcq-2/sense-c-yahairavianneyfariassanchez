@@ -1,0 +1,3 @@
+
+int emailAlerter ();
+int ledAlerter ();
