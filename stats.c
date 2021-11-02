@@ -61,4 +61,4 @@ void check_and_alert(float maxThreshold, alerters[], struct Stats computedStats)
     }
 
     return;
-};
+}
